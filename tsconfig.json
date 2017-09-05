@@ -3,6 +3,9 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
+    "types": [
+      "./node_modules/redux/index.d.ts"
+    ],
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
