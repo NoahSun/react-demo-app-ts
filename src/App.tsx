@@ -1,6 +1,10 @@
 /// <reference types="node" />
 
 import * as React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect, MapStateToPropsParam, Dispatch, MapStateToPropsFactory, MapDispatchToPropsFactory } from 'react-redux';
+import AllReducer from './reducer/index';
+
 import './App.css';
 
 const logo = require('./logo.svg');
@@ -21,4 +25,14 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// const mapStateToProps: MapStateToPropsFactory<> = (state: MapStateToPropsParam<>, ownProps:) => {
+//   return {
+
+//   }
+// }
+
+const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({
+  ...bindActionCreators({}, dispatch),
+});
+
+export default connect(null, mapDispatchToProps)(App);

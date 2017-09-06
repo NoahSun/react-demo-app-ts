@@ -5,7 +5,20 @@ const pingInitialState = createInitialState('ping');
 
 export const ping = (state = pingInitialState, action: AnyAction) => {
     switch (action.type) {
-        case `ACTION_TYPE_1`:
+        case `PING`:
+            Object.assign(state.ping, {
+                response: {
+                    isPing: true
+                }
+            });
+            return state;
+
+        case `PONG`:
+            Object.assign(state.ping, {
+                response: {
+                    isPing: false
+                }
+            });
             return state;
 
         default:
